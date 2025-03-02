@@ -1,0 +1,69 @@
+{
+  "welcome": "Hoşgeldiniz",
+  "hello": "Merhaba",
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "language": "Dil"
+  },
+  "home": {
+    "title": "Ana Sayfa5",
+    "welcome": "Web sitemize hoş geldiniz",
+    "description": "Bu bir çok dilli Nuxt3 uygulama örneğidir"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Biz Nuxt3 ve Vue.js ile harika web uygulamaları oluşturmaya adanmış bir ekibiz"
+  },
+  "footer": {
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkımızda",
+      "careers": "Kariyer",
+      "contact": "İletişim"
+    },
+    "services": {
+      "title": "Hizmetler",
+      "web": "Web Geliştirme",
+      "mobile": "Mobil Uygulamalar",
+      "consulting": "Danışmanlık"
+    },
+    "support": {
+      "title": "Destek",
+      "faq": "SSS",
+      "docs": "Dökümanlar",
+      "help": "Yardım Merkezi"
+    },
+    "contact": {
+      "title": "İletişim",
+      "address": "123 İş Sokağı, Şehir",
+      "phone": "+90 234 567 890",
+      "email": "bilgi[at]ornek.com"
+    },
+    "copyright": "© 2024 Şirketiniz. Tüm hakları saklıdır."
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Neler Sunuyoruz",
+    "intro": "Kapsamlı hizmet yelpazemizi keşfedin",
+    "sections": {
+      "web": {
+        "title": "Web Geliştirme",
+        "description": "İşletmeniz için özel web çözümleri"
+      },
+      "mobile": {
+        "title": "Mobil Geliştirme",
+        "description": "Native ve cross-platform mobil uygulamalar"
+      }
+    },
+    "cta": {
+      "button": "Hemen Başlayın",
+      "text": "Projenize başlamaya hazır mısınız?"
+    },
+    "meta": {
+      "title": "Hizmetlerimiz - Çok Dilli Nuxt3 Uygulaması",
+      "description": "Web ve mobil geliştirme hizmetlerimizin kapsamlı yelpazesini keşfedin"
+    }
+  }
+}

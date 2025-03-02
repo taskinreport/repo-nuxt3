@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Home Page3333399",
+    "welcome": "Welcome to our website",
+    "description": "This is a multilingual Nuxt3 application example"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a team dedicated to creating amazing web applications with Nuxt3 and Vue.js"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "What We Offer",
+    "intro": "Discover our comprehensive range of services",
+    "sections": {
+      "web": {
+        "title": "Web Development",
+        "description": "Custom web solutions for your business"
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile apps"
+      }
+    },
+    "cta": {
+      "button": "Get Started",
+      "text": "Ready to begin your project?"
+    },
+    "meta": {
+      "title": "Our Services - Multilingual Nuxt3 App",
+      "description": "Explore our comprehensive range of web and mobile development services"
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact"
+    },
+    "services": {
+      "title": "Services",
+      "web": "Web Development",
+      "mobile": "Mobile Apps",
+      "consulting": "Consulting"
+    },
+    "support": {
+      "title": "Support",
+      "faq": "FAQ",
+      "docs": "Documentation",
+      "help": "Help Center"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "123 Business Street, City",
+      "phone": "+1 234 567 890",
+      "email": "info[at]example.com"
+    },
+    "copyright": "© 2024 Your Company. All rights reserved."
+  }
+}

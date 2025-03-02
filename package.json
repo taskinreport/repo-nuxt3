@@ -7,7 +7,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "rm -rf .nuxt && rm -rf .output && rm -rf node_modules/.vite",
+    "reset": "rm -rf .nuxt node_modules/.vite .output && npm install && npm run dev",
+    "fix": "rm -rf node_modules package-lock.json .nuxt .output && npm install && npm run dev"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.2.1",

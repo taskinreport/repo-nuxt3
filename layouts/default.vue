@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-7xl mx-auto p-4">
+  <div class="min-h-screen flex flex-col">
     <nav
       class="bg-gray-100 p-4 mb-6 rounded-lg flex justify-between items-center"
     >
@@ -14,13 +14,19 @@
             :to="localePath('/')"
             class="text-gray-700 hover:text-blue-500 transition-colors"
           >
-            {{ t("nav.home") }}
+            {{ $t("nav.home") }}
           </NuxtLink>
           <NuxtLink
             :to="localePath('/about')"
             class="text-gray-700 hover:text-blue-500 transition-colors"
           >
-            {{ t("nav.about") }}
+            {{ $t("nav.about") }}
+          </NuxtLink>
+          <NuxtLink
+            :to="localePath('/services')"
+            class="text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            {{ $t("nav.services") }}
           </NuxtLink>
         </div>
       </div>
@@ -75,19 +81,26 @@
           class="text-gray-700 hover:text-blue-500 transition-colors"
           @click="isMenuOpen = false"
         >
-          {{ t("nav.home") }}
+          {{ $t("nav.home") }}
         </NuxtLink>
         <NuxtLink
           :to="localePath('/about')"
           class="text-gray-700 hover:text-blue-500 transition-colors"
           @click="isMenuOpen = false"
         >
-          {{ t("nav.about") }}
+          {{ $t("nav.about") }}
+        </NuxtLink>
+        <NuxtLink
+          :to="localePath('/services')"
+          class="text-gray-700 hover:text-blue-500 transition-colors"
+          @click="isMenuOpen = false"
+        >
+          {{ $t("nav.services") }}
         </NuxtLink>
       </div>
       <div class="border-t border-gray-300 pt-4">
         <label class="block text-sm font-medium text-gray-700 mb-1">{{
-          t("nav.language")
+          $t("nav.language")
         }}</label>
         <select
           v-model="currentLocale"
@@ -100,12 +113,15 @@
       </div>
     </div>
 
-    <slot />
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8">
+      <slot />
+    </main>
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
-const { t, locale } = useI18n();
+const { locale } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 
