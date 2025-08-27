@@ -1,0 +1,12 @@
+/* Prose-first yaklaşımı: Tipografiyi Tailwind Typography (prose) yönetir. 
+   Burada sadece hizalama yardımcıları ve küçük yardımcılar tutulur. */
+
+/* WP hizalama yardımcıları */
+.wp-content .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.wp-content .alignright { float: right; margin-left: 1rem; }
+.wp-content .alignleft { float: left; margin-right: 1rem; }
+.wp-content::after { content: ""; display: block; clear: both; }
+
+/* İsteğe bağlı: figure merkezleme, caption tonu (prose ile uyumlu bırakıldı) */
+.wp-content figure { margin: 1.25rem 0; text-align: center; }
+

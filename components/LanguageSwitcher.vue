@@ -19,11 +19,8 @@
 
 <script setup>
 const { locale } = useI18n();
-const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
 const switchLocale = async (newLocale) => {
-  // Mevcut rotayı al
-  const route = useRoute();
-  // Aynı rotaya farklı dil ile yönlendir
-  await navigateTo(localePath(route.fullPath, newLocale));
+  await navigateTo(switchLocalePath(newLocale));
 };
 </script>

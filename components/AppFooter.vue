@@ -5,22 +5,22 @@
         <!-- Şirket Bilgileri -->
         <div>
           <h3 class="font-bold text-lg mb-4">
-            {{ $t("footer.company.title") }}
+            {{ t("footer.company.title") }}
           </h3>
           <ul class="space-y-2">
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">
-                {{ $t("footer.company.about") }}
+                {{ t("footer.company.about") }}
               </a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">
-                {{ $t("footer.company.careers") }}
+                {{ t("footer.company.careers") }}
               </a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">
-                {{ $t("footer.company.contact") }}
+                {{ t("footer.company.contact") }}
               </a>
             </li>
           </ul>
@@ -29,22 +29,22 @@
         <!-- Hizmetler -->
         <div>
           <h3 class="font-bold text-lg mb-4">
-            {{ $t("footer.services.title") }}
+            {{ t("footer.services.title") }}
           </h3>
           <ul class="space-y-2">
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.services.web")
+                t("footer.services.web")
               }}</a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.services.mobile")
+                t("footer.services.mobile")
               }}</a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.services.consulting")
+                t("footer.services.consulting")
               }}</a>
             </li>
           </ul>
@@ -53,22 +53,22 @@
         <!-- Destek -->
         <div>
           <h3 class="font-bold text-lg mb-4">
-            {{ $t("footer.support.title") }}
+            {{ t("footer.support.title") }}
           </h3>
           <ul class="space-y-2">
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.support.faq")
+                t("footer.support.faq")
               }}</a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.support.docs")
+                t("footer.support.docs")
               }}</a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-blue-500">{{
-                $t("footer.support.help")
+                t("footer.support.help")
               }}</a>
             </li>
           </ul>
@@ -77,22 +77,22 @@
         <!-- İletişim -->
         <div>
           <h3 class="font-bold text-lg mb-4">
-            {{ $t("footer.contact.title") }}
+            {{ t("footer.contact.title") }}
           </h3>
           <ul class="space-y-2">
-            <li class="text-gray-600">{{ $t("footer.contact.address") }}</li>
-            <li class="text-gray-600">{{ $t("footer.contact.phone") }}</li>
-            <li class="text-gray-600">{{ $t("footer.contact.email") }}</li>
+            <li class="text-gray-600">{{ t("footer.contact.address") }}</li>
+            <li class="text-gray-600">{{ t("footer.contact.phone") }}</li>
+            <li class="text-gray-600">{{ t("footer.contact.email") }}</li>
           </ul>
         </div>
       </div>
       <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500">
-        <p>{{ $t("footer.copyright") }}</p>
+        <p>{{ t("footer.copyright") }}</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-// Global i18n kullanılıyor
+const { t } = useI18n()
 </script>
