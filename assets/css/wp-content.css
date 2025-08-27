@@ -1,5 +1,4 @@
-/* Prose-first yaklaşımı: Tipografiyi Tailwind Typography (prose) yönetir. 
-   Burada sadece hizalama yardımcıları ve küçük yardımcılar tutulur. */
+/* 🎨 Premium Blog Typography Styles */
 
 /* WP hizalama yardımcıları */
 .wp-content .aligncenter { display: block; margin-left: auto; margin-right: auto; }
@@ -7,6 +6,248 @@
 .wp-content .alignleft { float: left; margin-right: 1rem; }
 .wp-content::after { content: ""; display: block; clear: both; }
 
-/* İsteğe bağlı: figure merkezleme, caption tonu (prose ile uyumlu bırakıldı) */
-.wp-content figure { margin: 1.25rem 0; text-align: center; }
+/* 📰 Enhanced Typography */
+.wp-content {
+  line-height: 1.75;
+  font-size: 1.125rem;
+  color: #374151;
+}
+
+/* ✨ Beautiful Headings */
+.wp-content h1,
+.wp-content h2,
+.wp-content h3,
+.wp-content h4,
+.wp-content h5,
+.wp-content h6 {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+}
+
+.wp-content h1 { 
+  font-size: 3rem; 
+  margin-top: 0; 
+  margin-bottom: 2rem;
+}
+.wp-content h2 { 
+  font-size: 2.5rem; 
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #e2e8f0;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.wp-content h3 { 
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+.wp-content h4 { 
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.wp-content h5 { 
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+.wp-content h6 { 
+  font-size: 1.125rem; 
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* 📝 Paragraphs & Text */
+.wp-content p {
+  margin-bottom: 2rem;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.wp-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 🔗 Links */
+.wp-content a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.wp-content a:hover {
+  color: #1d4ed8;
+  border-bottom-color: #3b82f6;
+}
+
+/* 📋 Lists */
+.wp-content ul,
+.wp-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.wp-content li {
+  margin-bottom: 0.5rem;
+}
+
+.wp-content ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+.wp-content ul li:before {
+  content: '•';
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* 💬 Blockquotes */
+.wp-content blockquote {
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: #f8fafc;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #475569;
+}
+
+.wp-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* 💻 Code */
+.wp-content code {
+  background: #f1f5f9;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: #e11d48;
+}
+
+.wp-content pre {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.wp-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* 🖼️ Images & Figures */
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+.wp-content figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.wp-content figcaption {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* 📊 Tables */
+.wp-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.wp-content th,
+.wp-content td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.wp-content th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+}
+
+.wp-content tr:hover {
+  background: #f9fafb;
+}
+
+/* ⭐ Special Elements */
+.wp-content .highlight-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.wp-content .info-box {
+  background: #dbeafe;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .wp-content {
+    font-size: 1rem;
+  }
+  
+  .wp-content h1 { 
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .wp-content h2 { 
+    font-size: 1.875rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .wp-content h3 { 
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .wp-content h4 { 
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+  
+  .wp-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .wp-content ul,
+  .wp-content ol {
+    padding-left: 1.5rem;
+  }
+}
 

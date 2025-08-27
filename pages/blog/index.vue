@@ -9,31 +9,36 @@
       <div v-if="pending" class="text-gray-500">Loading posts…</div>
       <div v-else-if="error" class="text-red-600">Failed to load posts.</div>
 
-      <div v-else class="grid gap-6 md:grid-cols-2">
-        <NuxtLink
+      <div v-else class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <article
           v-for="post in posts"
           :key="post.id"
-          :to="postLink(post.slug)"
-          class="card group"
+          class="blog-card group"
         >
-          <div class="thumb" v-if="post.image">
-            <img :src="post.image" alt="" class="w-full h-full object-cover" />
-          </div>
-          <div class="p-5">
-            <div class="text-xs text-gray-500">{{ formatDate(post.date) }}</div>
-            <h2 class="mt-2 text-xl font-semibold leading-snug group-hover:text-blue-600 transition-colors">
-              <span v-html="post.title"></span>
-            </h2>
-            <p class="mt-2 text-gray-600 line-clamp-3" v-html="post.excerpt"></p>
-            <div class="mt-4 flex items-center text-sm text-blue-600 font-medium">
-              Read more
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
+          <NuxtLink :to="postLink(post.slug)" class="block h-full">
+            <div class="blog-thumb" v-if="post.image">
+              <img :src="post.image" :alt="post.title" class="w-full h-full object-cover" />
+              <div class="blog-overlay"></div>
             </div>
-          </div>
-        </NuxtLink>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <time class="blog-date">{{ formatDate(post.date) }}</time>
+                <span class="blog-category">Blog</span>
+              </div>
+              <h2 class="blog-title group-hover:text-blue-600 transition-colors duration-300">
+                <span v-html="post.title"></span>
+              </h2>
+              <p class="blog-excerpt" v-html="post.excerpt"></p>
+              <div class="blog-read-more">
+                <span>{{ isTR ? 'Devamını Oku' : 'Read More' }}</span>
+                <svg class="blog-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+          </NuxtLink>
+        </article>
       </div>
 
       <!-- Pagination -->
@@ -138,20 +143,165 @@ useHead(() => {
 </script>
 
 <style scoped>
-.card {
+/* 🎨 Premium Blog Cards */
+.blog-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  border-radius: 0.75rem;
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
-  background: #fff;
-  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
 }
-.card:hover { box-shadow: 0 10px 30px rgba(2,6,23,0.08); border-color: #e2e8f0; }
-.thumb { aspect-ratio: 16/9; overflow: hidden; }
-.thumb img { transition: transform .35s ease; }
-.card:hover .thumb img { transform: scale(1.03); }
 
-/* line clamp helper */
-.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* 🖼️ Thumbnail */
+.blog-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.blog-card:hover .blog-thumb img {
+  transform: scale(1.1);
+}
+
+.blog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-card:hover .blog-overlay {
+  opacity: 1;
+}
+
+/* 📝 Content */
+.blog-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.blog-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.blog-category {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 🏷️ Title */
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111827;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 📄 Excerpt */
+.blog-excerpt {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 🔗 Read More */
+.blog-read-more {
+  display: flex;
+  align-items: center;
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.blog-arrow {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-read-more {
+  color: #1d4ed8;
+}
+
+.blog-card:hover .blog-arrow {
+  transform: translateX(4px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .blog-content {
+    padding: 1.25rem;
+  }
+  
+  .blog-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* 🎭 Hover animations */
+@media (prefers-reduced-motion: no-preference) {
+  .blog-card {
+    transform-origin: center;
+  }
+  
+  .blog-card:hover {
+    animation: subtle-bounce 0.6s ease-out;
+  }
+}
+
+@keyframes subtle-bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(-8px); }
+}
 </style>
